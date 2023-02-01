@@ -1,4 +1,4 @@
-package com.example.electiveselector.fragments
+package com.example.electiveselector.viewModels
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import com.example.electiveselector.R
 
 
-
-class ProfessorFragment : Fragment() {
-
-
+class OtpFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -19,7 +16,7 @@ class ProfessorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_professor, container, false)
+        return inflater.inflate(R.layout.fragment_otp, container, false)
     }
 
 

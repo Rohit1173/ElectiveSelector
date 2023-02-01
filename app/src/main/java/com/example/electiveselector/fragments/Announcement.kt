@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.electiveselector.R
 
 
-class StudentFragment : Fragment() {
+class Announcement : Fragment() {
 
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class StudentFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_student, container, false)
+        return inflater.inflate(R.layout.fragment_announcement, container, false)
     }
 
 

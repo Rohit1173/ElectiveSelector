@@ -9,6 +9,7 @@ interface MyApi {
     @FormUrlEncoded
     @POST("/signup")
     fun createUser(
+        @Field("Name") Name: String,
         @Field("userName") userName: String,
         @Field("userEmail") userEmail: String,
         @Field("userPassword") userPassword: String
@@ -32,4 +33,10 @@ interface MyApi {
         @Field("userName") userName: String,
         @Field("userEmail") userEmail: String
     ): Call<myResponse>
+
+    @FormUrlEncoded
+    @POST("/profVerify")
+    fun profVerify(
+        @Field("userEmail")userEmail: String
+    ):Call<myResponse>
 }

@@ -3,13 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProfessorFragment">
-
+    tools:context=".fragments.ProfSem7">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="PROFESSOR SCREEN"
+        android:text="SEM 7"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="25sp"

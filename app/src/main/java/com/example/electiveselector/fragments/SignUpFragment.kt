@@ -1,5 +1,6 @@
 package com.example.electiveselector.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
 import androidx.fragment.app.Fragment
@@ -39,6 +40,7 @@ class SignUpFragment : Fragment() {
         )
         vm = ViewModelProvider.AndroidViewModelFactory(requireActivity().application)
             .create(signupViewModel::class.java)
+        val sharedPreference =  requireContext().getSharedPreferences("pref", Context.MODE_PRIVATE)
         binding.setEmail.doOnTextChanged { text, _, _, _ ->
             if (!emailCheck(text.toString())) {
                 binding.layoutSetEmail.error = "Invalid E-Mail Format"
@@ -67,16 +69,16 @@ class SignUpFragment : Fragment() {
             }
         }
         binding.changeToLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
+           // findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
         }
-        binding.sendOtp.setOnClickListener {
-            if(binding.setUsername.text.toString().trim().isNotEmpty()&&binding.setEmail.text.toString().trim().isNotEmpty()){
-                vm.postOtp(otpData(binding.setUsername.text.toString().trim(),binding.setEmail.text.toString().trim()))
-            }
-            else{
-                Toast.makeText(context,"UserName and UserEmail cannot be empty", Toast.LENGTH_LONG).show()
-            }
-        }
+//        binding.sendOtp.setOnClickListener {
+//            if(binding.setUsername.text.toString().trim().isNotEmpty()&&binding.setEmail.text.toString().trim().isNotEmpty()){
+//                vm.postOtp(otpData(binding.setUsername.text.toString().trim(),binding.setEmail.text.toString().trim()))
+//            }
+//            else{
+//                Toast.makeText(context,"UserName and UserEmail cannot be empty", Toast.LENGTH_LONG).show()
+//            }
+//        }
         binding.SignUpBtn.setOnClickListener {
             if (binding.setName.text.toString().trim().isEmpty()) {
                 binding.layoutSetName.error = "Name cannot be empty"
@@ -103,6 +105,7 @@ class SignUpFragment : Fragment() {
 
             if (checks()) {
                 val signupData = signupData(
+                    binding.setName.text.toString().trim(),
                     binding.setUsername.text.toString().trim(),
                     binding.setEmail.text.toString().trim(),
                     binding.setPassword.text.toString().trim()
@@ -147,11 +150,14 @@ class SignUpFragment : Fragment() {
                 try {
                     val jsonObject = JSONObject(Gson().toJson(it.body()))
                     signMsg = jsonObject.getString("message")
+                    val editor = sharedPreference.edit()
+                    editor.putString("key",signMsg)
+                    editor.apply()
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }
                 Toast.makeText(context, signMsg, Toast.LENGTH_LONG).show()
-                findNavController().navigate(R.id.action_signUpFragment_to_studentFragment)
+                //findNavController().navigate(R.id.action_signUpFragment_to_studentFragment)
             } else {
                 try {
                     val jObjError = JSONObject(it.errorBody()!!.string())
@@ -177,8 +183,6 @@ class SignUpFragment : Fragment() {
             binding.setEmail.text.toString().trim().isNotEmpty() &&
             binding.setPassword.text.toString().trim().isNotEmpty() &&
             binding.setConfirmPassword.text.toString().trim().isNotEmpty() &&
-            binding.setOtp.text.toString().trim().isNotEmpty()&&
-            binding.setOtp.text.toString().trim()==otpMsg&&
             emailCheck(binding.setEmail.text.toString().trim()) &&
             binding.setPassword.text.toString()
                 .trim() == binding.setConfirmPassword.text.toString().trim()

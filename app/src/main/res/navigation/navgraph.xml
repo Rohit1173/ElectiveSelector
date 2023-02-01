@@ -11,47 +11,12 @@
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
-            android:id="@+id/action_splashScreen_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_splashScreen_to_firebaseSignIn"
+            app:destination="@id/firebaseSignIn" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.electiveselector.fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_professorFragment"
-            app:destination="@id/professorFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_studentFragment"
-            app:destination="@id/studentFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.electiveselector.fragments.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
-        <action
-            android:id="@+id/action_signUpFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_studentFragment"
-            app:destination="@id/studentFragment" />
-        <action
-            android:id="@+id/action_signUpFragment_to_professorFragment"
-            app:destination="@id/professorFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/professorFragment"
-        android:name="com.example.electiveselector.fragments.ProfessorFragment"
-        android:label="fragment_professor"
-        tools:layout="@layout/fragment_professor" />
-    <fragment
-        android:id="@+id/studentFragment"
-        android:name="com.example.electiveselector.fragments.StudentFragment"
-        android:label="fragment_student"
-        tools:layout="@layout/fragment_student" />
+        android:id="@+id/firebaseSignIn"
+        android:name="com.example.electiveselector.fragments.FirebaseSignIn"
+        android:label="fragment_firebase_sign_in"
+        tools:layout="@layout/fragment_firebase_sign_in" />
 </navigation>

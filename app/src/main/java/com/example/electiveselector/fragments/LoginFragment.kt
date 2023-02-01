@@ -2,15 +2,13 @@ package com.example.electiveselector.fragments
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.example.electiveselector.R
 import com.example.electiveselector.data.loginData
 import com.example.electiveselector.databinding.FragmentLoginBinding
 import com.example.electiveselector.viewModels.loginViewModel
@@ -49,7 +47,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.changeToSignup.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+           // findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
         binding.logInBtn.setOnClickListener {
             if (binding.logUser.text.toString().trim().isEmpty()) {
@@ -89,7 +87,7 @@ class LoginFragment : Fragment() {
                     e.printStackTrace()
                 }
                 Toast.makeText(context, logMsg, Toast.LENGTH_LONG).show()
-                findNavController().navigate(R.id.action_loginFragment_to_studentFragment)
+               // findNavController().navigate(R.id.action_loginFragment_to_professorFragment)
             } else {
                 try {
                     val jObjError = JSONObject(it.errorBody()!!.string())

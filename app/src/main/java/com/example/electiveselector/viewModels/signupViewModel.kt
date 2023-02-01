@@ -18,6 +18,7 @@ class signupViewModel(application: Application): AndroidViewModel(application) {
 
     fun addUser(signupData: signupData) {
         retrofitInstance.api.createUser(
+            signupData.Name,
             signupData.userName,
             signupData.userEmail,
             signupData.userPassword
