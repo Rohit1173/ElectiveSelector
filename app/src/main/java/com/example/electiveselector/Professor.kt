@@ -1,21 +1,20 @@
 package com.example.electiveselector
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.electiveselector.R
 import com.example.electiveselector.databinding.ActivityProfessorBinding
 import com.example.electiveselector.fragments.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
+
 
 class Professor : AppCompatActivity() {
     lateinit var binding: ActivityProfessorBinding
@@ -35,6 +34,11 @@ class Professor : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.sideNav.setCheckedItem(R.id.home)
         binding.sideNav.itemIconTintList=null
+        val header: View = binding.sideNav.getHeaderView(0)
+        val pEmail:TextView=header.findViewById(R.id.email)
+        pEmail.text=mAuth.currentUser!!.email
+        val type:TextView=header.findViewById(R.id.type)
+        type.text="PROFESSOR"
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
@@ -51,7 +55,7 @@ class Professor : AppCompatActivity() {
             }
             true
         }
-        binding.logout.setOnClickListener {
+        binding.profLogout.setOnClickListener {
            mAuth.signOut()
             googleSignInClient.signOut()
             val intent = Intent (this, MainActivity::class.java)

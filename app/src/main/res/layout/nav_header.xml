@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="@color/design_default_color_primary"
-    >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/design_default_color_primary">
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:text="EMAIL"
+        android:textColor="@color/black"
+
+
+        />
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="50dp"
+        android:text="Prof/Student"
+        android:textColor="@color/black"
+
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

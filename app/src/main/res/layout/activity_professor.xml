@@ -25,7 +25,7 @@
         app:menu="@menu/nav_drawer_menu"
         >
         <Button
-            android:id="@+id/logout"
+            android:id="@+id/profLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"

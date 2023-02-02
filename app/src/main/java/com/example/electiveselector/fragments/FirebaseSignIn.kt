@@ -124,6 +124,7 @@ class FirebaseSignIn : Fragment() {
                         vm.checkProf(email)
                     }
                     else{
+                        googleSignInClient.signOut()
                         Toast.makeText(requireContext(), "Try Logging in with Institute ID", Toast.LENGTH_LONG).show()
                     }
 
