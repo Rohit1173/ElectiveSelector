@@ -1,17 +1,529 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AddAnElective">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.AddAnElective"
+    android:background="#DCF7FE"
+    >
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ADD AN ELECTIVE"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elective Selection"
+        android:textStyle="bold"
+        android:textSize="26sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="86dp"
+        android:fontFamily="@font/nunito_black"
         />
+    <Spinner
+        android:id="@+id/chooseSem"
+        android:layout_width="230dp"
+        android:layout_height="36dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="141dp"
+        android:background="#BFEAF5"
 
-</FrameLayout>
+        />
+    <TextView
+        android:id="@+id/fillDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="203dp"
+        android:fontFamily="@font/nunito_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="Fill Elective Details"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
+    
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/el1card"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fillDetails"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#BFEAF5"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginBottom="30dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/el1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginTop="10dp"
+                android:text="Elective 1"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/el1sub1card"
+                android:layout_width="277dp"
+                android:layout_height="247dp"
+                android:backgroundTint="#BFEAF5"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el1"
+                app:strokeColor="#82AAE3"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:hint="Add Subject Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el1sub1Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:hint="Add Faculty Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el1sub1Faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/el1sub2card"
+                android:layout_width="277dp"
+                android:layout_height="247dp"
+                android:backgroundTint="#BFEAF5"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el1sub1card"
+                app:strokeColor="#82AAE3"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:hint="Add Subject Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el1sub2Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:hint="Add Faculty Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el1sub2Faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/el1sub3card"
+                android:layout_width="277dp"
+                android:layout_height="247dp"
+                android:backgroundTint="#BFEAF5"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el1sub2card"
+                app:strokeColor="#82AAE3"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:hint="Add Subject Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el1sub3Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:hint="Add Faculty Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el1sub3Faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/el1scheduleTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:text="Schedule release time"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el1sub3card" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/el1scheduleTimeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#AAE1EF"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:contentDescription="schedule"
+                android:src="@drawable/ic_schedule"
+                app:layout_constraintLeft_toRightOf="@+id/el1scheduleTime"
+                app:layout_constraintTop_toBottomOf="@+id/el1sub3card" />
+
+            <Button
+                android:id="@+id/el1Post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#82AAE3"
+                android:text="POST"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el1scheduleTime" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+<!--    ok-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/el2card"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/el1card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#BFEAF5"
+        app:cardPreventCornerOverlap="true"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginBottom="30dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/el2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginTop="10dp"
+                android:text="Elective 2"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/el2sub1card"
+                android:layout_width="277dp"
+                android:layout_height="247dp"
+                android:backgroundTint="#BFEAF5"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2"
+                app:strokeColor="#82AAE3"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:hint="Add Subject Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el2sub1Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:hint="Add Faculty Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el2sub1Faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/el2sub2card"
+                android:layout_width="277dp"
+                android:layout_height="247dp"
+                android:backgroundTint="#BFEAF5"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2sub1card"
+                app:strokeColor="#82AAE3"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:hint="Add Subject Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el2sub2Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:hint="Add Faculty Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el2sub2Faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/el2sub3card"
+                android:layout_width="277dp"
+                android:layout_height="247dp"
+                android:backgroundTint="#BFEAF5"
+                app:cardCornerRadius="20dp"
+                android:layout_marginTop="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2sub2card"
+                app:strokeColor="#82AAE3"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="22dp"
+                    android:hint="Add Subject Title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el2sub3Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:hint="Add Faculty Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/el2sub3Faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#AAE1EF"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/el2scheduleTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_black"
+                android:text="Schedule release time"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2sub3card" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/el2scheduleTimeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#AAE1EF"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:contentDescription="schedule"
+                android:src="@drawable/ic_schedule"
+                app:layout_constraintLeft_toRightOf="@+id/el2scheduleTime"
+                app:layout_constraintTop_toBottomOf="@+id/el2sub3card" />
+
+            <Button
+                android:id="@+id/el2Post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#82AAE3"
+                android:text="POST"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2scheduleTime" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

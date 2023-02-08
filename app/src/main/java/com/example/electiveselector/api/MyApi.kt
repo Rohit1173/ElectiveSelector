@@ -2,8 +2,10 @@ package com.example.electiveselector.api
 
 
 import com.example.electiveselector.data.myResponse
+import com.example.electiveselector.fragments.*
 import retrofit2.Call
 import retrofit2.http.*
+import javax.sql.StatementEvent
 
 interface MyApi {
     @FormUrlEncoded
@@ -39,4 +41,13 @@ interface MyApi {
     fun profVerify(
         @Field("userEmail")userEmail: String
     ):Call<myResponse>
+
+   // @FormUrlEncoded
+    @POST("/addElectiveDetails")
+    fun addElectiveDetails(
+        @Body electiveData: ElectiveData
+    ):Call<myResponse>
+
+    @GET("/announcement")
+    suspend fun announcements():AnnouncementResponse
 }

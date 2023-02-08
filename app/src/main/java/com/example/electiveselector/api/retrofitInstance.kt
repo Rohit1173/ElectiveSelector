@@ -1,5 +1,6 @@
 package com.example.electiveselector.api
 
+import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
@@ -10,8 +11,12 @@ private const val BASE_URL =
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
+private val okhttp = okhttp3.OkHttpClient.Builder()
+    .addInterceptor(OkHttpProfilerInterceptor())
+    .build()
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
+    .client(okhttp)
     .baseUrl(BASE_URL)
     .build()
 object retrofitInstance {

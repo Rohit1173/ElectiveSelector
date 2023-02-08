@@ -3,16 +3,13 @@ package com.example.electiveselector.fragments
 import android.content.Context
 import android.os.Bundle
 import android.util.Patterns
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.example.electiveselector.R
-import com.example.electiveselector.data.otpData
 import com.example.electiveselector.data.signupData
 import com.example.electiveselector.databinding.FragmentSignUpBinding
 import com.example.electiveselector.viewModels.signupViewModel
