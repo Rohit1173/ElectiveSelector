@@ -1,4 +1,4 @@
-package com.example.electiveselector
+package com.example.electiveselector.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.electiveselector.fragments.ElectiveData
+import com.example.electiveselector.R
+import com.example.electiveselector.data.ElectiveData
 
 class AnnouncementAdapter(private var list: MutableList<ElectiveData>) :
     RecyclerView.Adapter<AnnouncementAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.example.electiveselector.fragments
+package com.example.electiveselector.data
 
 data class ElectiveDetails(
     val subTitle:String,

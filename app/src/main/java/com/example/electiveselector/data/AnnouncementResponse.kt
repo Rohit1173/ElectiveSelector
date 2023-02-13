@@ -1,6 +1,6 @@
-package com.example.electiveselector.fragments
+package com.example.electiveselector.data
 
-import android.os.Message
+import com.example.electiveselector.data.ElectiveData
 
 data class AnnouncementResponse(
     val status:String,

@@ -1,11 +1,12 @@
 package com.example.electiveselector.api
 
 
+import com.example.electiveselector.data.AnnouncementResponse
+import com.example.electiveselector.data.ElectiveData
 import com.example.electiveselector.data.myResponse
-import com.example.electiveselector.fragments.*
+import com.example.electiveselector.data.semResponse
 import retrofit2.Call
 import retrofit2.http.*
-import javax.sql.StatementEvent
 
 interface MyApi {
     @FormUrlEncoded
@@ -49,5 +50,21 @@ interface MyApi {
     ):Call<myResponse>
 
     @GET("/announcement")
-    suspend fun announcements():AnnouncementResponse
+    suspend fun announcements(): AnnouncementResponse
+
+    @FormUrlEncoded
+    @POST("/sem")
+    fun semData(
+        @Field("semNum")semNum: String,
+        @Field("userEmail")userEmail:String
+    ):Call<semResponse>
+
+    @FormUrlEncoded
+    @POST("/choose")
+    fun chooseSub(
+        @Field("userEmail")userEmail: String,
+        @Field("semNum")semNum: String,
+        @Field("electiveNum")electiveNum: String,
+        @Field("choiceString")choiceString: String
+    ):Call<myResponse>
 }

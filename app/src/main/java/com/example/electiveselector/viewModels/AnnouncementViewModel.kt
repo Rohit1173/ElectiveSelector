@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.electiveselector.api.retrofitInstance
-import com.example.electiveselector.fragments.AnnouncementResponse
+import com.example.electiveselector.data.AnnouncementResponse
 import kotlinx.coroutines.launch
 
 class AnnouncementViewModel(application: Application):AndroidViewModel(application) {

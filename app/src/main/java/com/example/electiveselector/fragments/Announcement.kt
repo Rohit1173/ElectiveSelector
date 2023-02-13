@@ -1,12 +1,16 @@
 package com.example.electiveselector.fragments
 
 import android.os.Bundle
+import android.os.Message
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.electiveselector.AnnouncementAdapter
+import com.example.electiveselector.adapters.AnnouncementAdapter
+import com.example.electiveselector.data.ElectiveData
+import com.example.electiveselector.data.ElectiveDetails
 import com.example.electiveselector.databinding.FragmentAnnouncementBinding
 import com.example.electiveselector.viewModels.AnnouncementViewModel
 
@@ -27,7 +31,8 @@ class Announcement : Fragment() {
             .create(AnnouncementViewModel::class.java)
 
         vm.announcements.observe(viewLifecycleOwner) {
-            binding.recycler.adapter = AnnouncementAdapter(it.message)
+            val list:MutableList<ElectiveData> = it.message
+            binding.recycler.adapter = AnnouncementAdapter(list)
             binding.recycler.setHasFixedSize(true)
         }
 

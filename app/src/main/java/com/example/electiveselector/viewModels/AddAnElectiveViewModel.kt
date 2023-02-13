@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.electiveselector.api.retrofitInstance
 import com.example.electiveselector.data.myResponse
-import com.example.electiveselector.fragments.ElectiveData
+import com.example.electiveselector.data.ElectiveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

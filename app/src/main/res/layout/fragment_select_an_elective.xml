@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,16 +8,21 @@
     tools:context=".fragments.SelectAnElective">
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="250dp"
+        android:id="@+id/layoutCurrentSem"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="100dp"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/currentSem"
@@ -27,7 +33,316 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/studentEl1Card"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/layoutCurrentSem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#BFEAF5"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:strokeWidth="2dp"
+        app:strokeColor="#82AAE3"
+        android:layout_marginTop="30dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ELECTIVE 1"
+            android:fontFamily="@font/nunito_black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OPEN FOR SELECTION ON : "
+            android:fontFamily="@font/nunito_black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/scheduledAt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XX-XX-XXXX XX:XX"
+            android:fontFamily="@font/nunito_black"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:textSize="20sp"
+            />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="280dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="120dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="20dp"
+
+            >
+            <TextView
+                android:id="@+id/el1sub1SubTitle"
+                android:text="SUBJECT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginStart="30dp"
+                />
+            <TextView
+                android:id="@+id/el1sub1Faculty"
+                android:text="FACULTY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginStart="30dp"
+                />
+            <Button
+                android:id="@+id/el1sub1Choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHOOSE"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="10dp"
+
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="280dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="290dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="20dp"
+            >
+            <TextView
+                android:id="@+id/el1sub2SubTitle"
+                android:text="SUBJECT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginStart="30dp"
+                />
+            <TextView
+                android:id="@+id/el1sub2Faculty"
+                android:text="FACULTY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginStart="30dp"
+                />
+            <Button
+                android:id="@+id/el1sub2Choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHOOSE"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="10dp"
+                />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="280dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="460dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="20dp"
+            android:layout_marginBottom="30dp"
+
+            >
+            <TextView
+                android:id="@+id/el1sub3SubTitle"
+                android:text="SUBJECT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginStart="30dp"
+                />
+            <TextView
+                android:id="@+id/el1sub3Faculty"
+                android:text="FACULTY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp"
+                android:fontFamily="@font/nunito_black"
+                android:layout_marginStart="30dp"
+                />
+            <Button
+                android:id="@+id/el1sub3Choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHOOSE"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginEnd="10dp"
+                />
+        </com.google.android.material.card.MaterialCardView>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/studentEl2Card"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/studentEl1Card"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#BFEAF5"
+            app:cardElevation="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:strokeWidth="2dp"
+            app:strokeColor="#82AAE3"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ELECTIVE 2"
+                android:fontFamily="@font/nunito_black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textSize="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OPEN FOR SELECTION ON : "
+                android:fontFamily="@font/nunito_black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/scheduledAt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XX-XX-XXXX XX:XX"
+                android:fontFamily="@font/nunito_black"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="80dp"
+                android:textSize="20sp"
+                />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="280dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="120dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                >
+                <TextView
+                    android:id="@+id/el2sub1SubTitle"
+                    android:text="SUBJECT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:layout_marginStart="30dp"
+                    />
+                <TextView
+                    android:id="@+id/el2sub1Faculty"
+                    android:text="FACULTY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:layout_marginStart="30dp"
+                    />
+                <Button
+                    android:id="@+id/el2sub1Choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHOOSE"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="10dp"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="280dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="290dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                >
+                <TextView
+                    android:id="@+id/el2sub2SubTitle"
+                    android:text="SUBJECT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:layout_marginStart="30dp"
+                    />
+                <TextView
+                    android:id="@+id/el2sub2Faculty"
+                    android:text="FACULTY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:layout_marginStart="30dp"
+                    />
+                <Button
+                    android:id="@+id/el2sub2Choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHOOSE"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="10dp"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="280dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="460dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="30dp"
+                >
+                <TextView
+                    android:id="@+id/el2sub3SubTitle"
+                    android:text="SUBJECT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:layout_marginStart="30dp"
+                    />
+                <TextView
+                    android:id="@+id/el2sub3Faculty"
+                    android:text="FACULTY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/nunito_black"
+                    android:layout_marginStart="30dp"
+                    />
+                <Button
+                    android:id="@+id/el2sub3Choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CHOOSE"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="10dp"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
