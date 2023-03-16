@@ -45,6 +45,7 @@ class SelectAnElective : Fragment() {
         )
         vm = ViewModelProvider.AndroidViewModelFactory(requireActivity().application)
             .create(SelectAnElectiveViewModel::class.java)
+        var sem="5"
         mAuth=FirebaseAuth.getInstance()
         email=mAuth.currentUser!!.email.toString()
         val year=email.subSequence(3,7)
@@ -54,26 +55,32 @@ class SelectAnElective : Fragment() {
         val x= currentYear-year.toString().toInt()
         binding.el1sub1Choose.setOnClickListener {
             vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"1","100"))
+            vm.getSemWiseElectiveData(semData(sem,email))
             Toast.makeText(context, "e1s1", Toast.LENGTH_LONG).show()
         }
         binding.el1sub2Choose.setOnClickListener {
             vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"1","010"))
+            vm.getSemWiseElectiveData(semData(sem,email))
             Toast.makeText(context, "e1s2", Toast.LENGTH_LONG).show()
         }
         binding.el1sub3Choose.setOnClickListener {
             vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"1","001"))
+            vm.getSemWiseElectiveData(semData(sem,email))
             Toast.makeText(context, "e1s3", Toast.LENGTH_LONG).show()
         }
         binding.el2sub1Choose.setOnClickListener {
             vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"2","100"))
+            vm.getSemWiseElectiveData(semData(sem,email))
             Toast.makeText(context, "e2s1", Toast.LENGTH_LONG).show()
         }
         binding.el2sub2Choose.setOnClickListener {
             vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"2","010"))
+            vm.getSemWiseElectiveData(semData(sem,email))
             Toast.makeText(context, "e2s2", Toast.LENGTH_LONG).show()
         }
         binding.el2sub3Choose.setOnClickListener {
             vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"2","001"))
+            vm.getSemWiseElectiveData(semData(sem,email))
             Toast.makeText(context, "e2s3", Toast.LENGTH_LONG).show()
         }
         vm.chooseSubResponse.observe(viewLifecycleOwner){
@@ -232,10 +239,12 @@ class SelectAnElective : Fragment() {
         }
         else if(x==3){
             if(currentMonth in 6..11){
+                sem="7"
                 binding.currentSem.setText("SEM 7")
                 vm.getSemWiseElectiveData(semData("7",email))
             }
             else{
+                sem="6"
                 binding.currentSem.setText("SEM 6")
                 vm.getSemWiseElectiveData(semData("6",email))
             }

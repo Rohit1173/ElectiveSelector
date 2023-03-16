@@ -23,7 +23,7 @@ class ProfHome : Fragment() {
         _binding = FragmentProfHomeBinding.inflate(
             inflater, container, false
         )
-        replaceFragment(Announcement())
+        replaceFragment(AddAnElective())
         binding.bottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.announcement -> replaceFragment(Announcement())

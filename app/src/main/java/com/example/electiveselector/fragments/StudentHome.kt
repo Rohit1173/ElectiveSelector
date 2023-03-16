@@ -22,11 +22,11 @@ class StudentHome : Fragment() {
         _binding = FragmentStudentHomeBinding.inflate(
             inflater, container, false
         )
-        replaceFragment(Announcement())
+        replaceFragment(SelectedElectives())
         binding.studentBottomNav.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.announcement -> replaceFragment(Announcement())
-                R.id.selectElective -> replaceFragment(SelectAnElective())
+                R.id.selectedElectives -> replaceFragment(SelectedElectives())
             }
             true
         }

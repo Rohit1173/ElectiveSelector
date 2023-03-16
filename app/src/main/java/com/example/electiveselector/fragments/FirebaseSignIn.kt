@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.electiveselector.Professor
 import com.example.electiveselector.R
 import com.example.electiveselector.Student
+import com.example.electiveselector.adapters.SliderAdapter
 import com.example.electiveselector.databinding.FragmentFirebaseSignInBinding
 import com.example.electiveselector.viewModels.ProfVerifyViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -27,6 +28,8 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.gson.Gson
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType
+import com.smarteist.autoimageslider.SliderAnimations
 import kotlinx.coroutines.Dispatchers.Main
 import org.json.JSONException
 import org.json.JSONObject
@@ -41,6 +44,14 @@ class FirebaseSignIn : Fragment() {
     lateinit var vm:ProfVerifyViewModel
     lateinit var msg:String
     lateinit var errorMsg:String
+    private lateinit var sliderAdapter: SliderAdapter
+    private var images: MutableList<Int> = mutableListOf(
+        R.drawable.img1,
+        R.drawable.img2,
+        R.drawable.img3,
+        R.drawable.img4,
+        R.drawable.img5
+    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -90,6 +101,15 @@ class FirebaseSignIn : Fragment() {
                     Toast.makeText(context, e.message, Toast.LENGTH_LONG).show()
                 }
             }
+        }
+
+        sliderAdapter = SliderAdapter(images)
+        binding.apply {
+            slide.setSliderAdapter(sliderAdapter)
+            slide.setIndicatorAnimation(IndicatorAnimationType.WORM)
+            slide.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION)
+            slide.startAutoCycle()
+
         }
         return binding.root
     }

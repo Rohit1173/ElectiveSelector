@@ -25,7 +25,7 @@ class AnnouncementAdapter(private var list: MutableList<ElectiveData>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list[position]
         holder.announcementText.text =
-            "The Elective ${item.electiveNum} for Sem ${item.semNum}  are: \n ${item.sub1.subTitle} , taught by ${item.sub1.facultyName} \n ${item.sub2.subTitle} , taught by ${item.sub2.facultyName} \n ${item.sub3.subTitle} , taught by ${item.sub3.facultyName} "
+            "Elective ${item.electiveNum} Released for Sem ${item.semNum} : \n 1. ${item.sub1.subTitle} , by ${item.sub1.facultyName} \n 2. ${item.sub2.subTitle} , by ${item.sub2.facultyName} \n 3. ${item.sub3.subTitle} , by ${item.sub3.facultyName} "
     }
 
     override fun getItemCount(): Int {

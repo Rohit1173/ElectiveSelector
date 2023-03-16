@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.electiveselector.databinding.ActivityProfessorBinding
 import com.example.electiveselector.databinding.ActivityStudentBinding
 import com.example.electiveselector.fragments.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -49,6 +48,7 @@ class Student : AppCompatActivity() {
             it.isChecked=true
             when(it.itemId){
                 R.id.home -> replaceFragment(StudentHome())
+                R.id.selectAnElective -> replaceFragment(SelectAnElective())
             }
             true
         }

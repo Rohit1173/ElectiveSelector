@@ -1,10 +1,7 @@
 package com.example.electiveselector.api
 
 
-import com.example.electiveselector.data.AnnouncementResponse
-import com.example.electiveselector.data.ElectiveData
-import com.example.electiveselector.data.myResponse
-import com.example.electiveselector.data.semResponse
+import com.example.electiveselector.data.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -67,4 +64,11 @@ interface MyApi {
         @Field("electiveNum")electiveNum: String,
         @Field("choiceString")choiceString: String
     ):Call<myResponse>
+
+
+    @FormUrlEncoded
+    @POST("/selectedElectives")
+    fun getSelectedElectives(
+        @Field("userEmail")userEmail: String,
+    ):Call<selectedElectivesData>
 }

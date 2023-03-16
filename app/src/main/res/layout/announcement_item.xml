@@ -5,24 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="100dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="10dp"
     app:cardPreventCornerOverlap="true"
-    app:cardBackgroundColor="#BFEAF5"
-    app:strokeWidth="2dp"
-    app:strokeColor="#82AAE3"
-    android:layout_margin="20dp"
+    app:cardBackgroundColor="#CFE0F8"
+    android:layout_margin="10dp"
     >
 
     <TextView
         android:id="@+id/announcementText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
         android:fontFamily="@font/nunito_black"
         android:textStyle="bold"
+        android:textColor="#2B3A55"
         />
-
-
-
 
 </com.google.android.material.card.MaterialCardView>
