@@ -19,4 +19,25 @@
         android:name="com.example.electiveselector.fragments.FirebaseSignIn"
         android:label="fragment_firebase_sign_in"
         tools:layout="@layout/fragment_firebase_sign_in" />
+    <fragment
+        android:id="@+id/profSem"
+        android:name="com.example.electiveselector.fragments.ProfSem"
+        android:label="fragment_prof_sem"
+        tools:layout="@layout/fragment_prof_sem" >
+        <action
+            android:id="@+id/action_profSem_to_semData"
+            app:destination="@id/semData" />
+    </fragment>
+    <fragment
+        android:id="@+id/semData"
+        android:name="com.example.electiveselector.fragments.SemData"
+        android:label="fragment_sem_data"
+        tools:layout="@layout/fragment_sem_data" >
+        <argument
+            android:name="sem"
+            app:argType="string" />
+        <argument
+            android:name="elective"
+            app:argType="string" />
+    </fragment>
 </navigation>

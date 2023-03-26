@@ -53,6 +53,16 @@ class SelectedElectives : Fragment() {
                     binding.el1Faculty.text=fac1
                     binding.el2Title.text=sub2
                     binding.el2Faculty.text=fac2
+                    if(sub1=="NA"&&sub2=="NA"){
+                        binding.noSelected.visibility=View.VISIBLE
+                    }
+                    else if(sub1=="NA"){
+                        binding.sub1card.visibility=View.GONE
+                    }
+                    else if(sub2=="NA"){
+                        binding.sub2card.visibility=View.GONE
+                    }
+
                 } catch (e: JSONException) {
                     e.printStackTrace()
                 }

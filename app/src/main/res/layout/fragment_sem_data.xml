@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E2EDFB"
+    tools:context=".fragments.SemData">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/semHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Semester 5"
+        android:gravity="center"
+        android:textColor="#2B3A55"
+        android:textSize="22sp"
+        android:fontFamily="@font/open_sans"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="30dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/semHeading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:cardBackgroundColor="#CFE0F8"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="8dp"
+        >
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sno"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="S.No"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:fontFamily="@font/open_sans"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/nameHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Name"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:fontFamily="@font/open_sans"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/sno"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/subHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Subject"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/nameHeading"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/rollNo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Roll.No"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/subHeading"
+            app:layout_constraintRight_toRightOf="parent"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="10dp"
+            />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/semDataRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/nameHeading"
+                android:layout_margin="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/sem_data_item"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </HorizontalScrollView>
+    </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

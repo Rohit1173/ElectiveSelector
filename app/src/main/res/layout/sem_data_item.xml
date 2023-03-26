@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/semDataCard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#E2EDFB"
+    app:cardCornerRadius="0dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:id="@+id/sno"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="1."
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:fontFamily="@font/open_sans"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/nameHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Sai Rohit Chappa"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            android:fontFamily="@font/open_sans"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/sno"
+            android:layout_marginStart="40dp"
+            />
+
+        <TextView
+            android:id="@+id/subHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Algorithmic Graph Theory"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/nameHeading"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginStart="50dp"
+            />
+
+        <TextView
+            android:id="@+id/rollNo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="LCS2020048"
+            android:gravity="center"
+            android:textColor="#2B3A55"
+            android:textStyle="bold"
+            android:textSize="11sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/subHeading"
+            app:layout_constraintRight_toRightOf="parent"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="20dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

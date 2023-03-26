@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -49,9 +50,21 @@ class Professor : AppCompatActivity() {
             it.isChecked=true
             when(it.itemId){
                 R.id.home -> replaceFragment(ProfHome())
-                R.id.sem5 -> replaceFragment(ProfSem5())
-                R.id.sem6 -> replaceFragment(ProfSem6())
-                R.id.sem7 -> replaceFragment(ProfSem7())
+                R.id.sem5 -> {
+                    val bundle = Bundle()
+                    bundle.putString("key", "5")
+                    replaceFragment(ProfSem(),bundle)
+                }
+                R.id.sem6 -> {
+                    val bundle = Bundle()
+                    bundle.putString("key", "6")
+                    replaceFragment(ProfSem(),bundle)
+                }
+                R.id.sem7 -> {
+                    val bundle = Bundle()
+                    bundle.putString("key", "7")
+                    replaceFragment(ProfSem(),bundle)
+                }
             }
             true
         }
@@ -69,11 +82,25 @@ class Professor : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    private fun replaceFragment(fragment: Fragment){
+    private fun replaceFragment(fragment: Fragment,args: Bundle? = null){
+        fragment.arguments = args
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frame,fragment)
             commit()
             binding.drawerLayout.closeDrawers()
+        }
+    }
+    var time = 0L
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (time + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed()
+        } else {
+            Toast.makeText(
+                this, "Press once again to exit",
+                Toast.LENGTH_SHORT
+            ).show()
+            time = System.currentTimeMillis()
         }
     }
 }

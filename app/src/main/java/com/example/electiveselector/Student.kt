@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -70,6 +71,19 @@ class Student : AppCompatActivity() {
             replace(R.id.studentFrame,fragment)
             commit()
             binding.studentDrawer.closeDrawers()
+        }
+    }
+    var time = 0L
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        if (time + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed()
+        } else {
+            Toast.makeText(
+                this, "Press once again to exit",
+                Toast.LENGTH_SHORT
+            ).show()
+            time = System.currentTimeMillis()
         }
     }
 }
