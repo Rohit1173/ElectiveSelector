@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.ViewModelProvider
 import com.example.electiveselector.data.ElectiveData
 import com.example.electiveselector.data.ElectiveDetails
@@ -23,7 +24,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener {
+class AddAnElective : Fragment(){
     private var _binding: FragmentAddAnElectiveBinding? = null
     private val binding get() = _binding!!
     lateinit var vm: AddAnElectiveViewModel
@@ -31,18 +32,6 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
     lateinit var msg:String
     lateinit var errorMsg:String
     lateinit var sem:String
-    var day=0
-    var month=0
-    var year=0
-    var hour=0
-    var min=0
-
-    var savedDay=0
-    var savedMonth=0
-    var savedYear=0
-    var savedHour=0
-    var savedMin=0
-
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -90,6 +79,21 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
 
             }
 
+        }
+        val el1btnList:MutableList<AppCompatButton> = mutableListOf(binding.el1CsBtn,binding.el1ItBtn,binding.el1CsaiBtn,binding.el1CsbBtn)
+        for( btn in el1btnList){
+            btn.setOnClickListener {
+                btn.isSelected = ! btn.isSelected
+            }
+        }
+        val el2btnList:MutableList<AppCompatButton> = mutableListOf(binding.el2CsBtn,binding.el2ItBtn,binding.el2CsaiBtn,binding.el2CsbBtn)
+        for( btn in el2btnList){
+            btn.setOnClickListener {
+                btn.isSelected = ! btn.isSelected
+            }
+        }
+        binding.el1CsBtn.setOnClickListener {
+            binding.el1CsBtn.isSelected= !binding.el1CsBtn.isSelected
         }
         vm.addElectiveResponse.observe(viewLifecycleOwner){
             if(it.isSuccessful){
@@ -141,6 +145,13 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
             val currentTime: String =
                 SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
             if(checks1()) {
+                val selBtnList:MutableList<String> = mutableListOf()
+                for( btn in el1btnList){
+                    if(btn.isSelected){
+                        selBtnList.add(btn.text.toString())
+                    }
+                }
+
                 vm.addElective(
                     ElectiveData(
                         sem,
@@ -148,24 +159,14 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
                         ElectiveDetails(sub1, faculty1),
                         ElectiveDetails(sub2, faculty2),
                         ElectiveDetails(sub3, faculty3),
+                        selBtnList,
                         mAuth.currentUser!!.email.toString(),
                         currentDate + "\n" + currentTime,
-                        binding.el1scheduleTime.text.toString()
                     )
                 )
             }
 
 
-        }
-        binding.el1scheduleTimeBtn.setOnClickListener {
-            getDateTimeCalendar()
-            DatePickerDialog(requireContext(),this,year,month,day).show()
-            binding.el1scheduleTime.text="$savedDay-$savedMonth-$savedYear $savedHour:$savedMin"
-        }
-        binding.el2scheduleTimeBtn.setOnClickListener {
-            getDateTimeCalendar()
-            DatePickerDialog(requireContext(),this,year,month,day).show()
-            binding.el2scheduleTime.text="$savedDay-$savedMonth-$savedYear $savedHour:$savedMin"
         }
         binding.el2Post.setOnClickListener {
             var sub1 = "NA"
@@ -200,6 +201,12 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
                 SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 
             if(checks2()) {
+                val selBtnList:MutableList<String> = mutableListOf()
+                for( btn in el2btnList){
+                    if(btn.isSelected){
+                        selBtnList.add(btn.text.toString())
+                    }
+                }
                 vm.addElective(
                     ElectiveData(
                         sem,
@@ -207,9 +214,9 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
                         ElectiveDetails(sub1, faculty1),
                         ElectiveDetails(sub2, faculty2),
                         ElectiveDetails(sub3, faculty3),
+                        selBtnList,
                         mAuth.currentUser!!.email.toString(),
                         currentDate + "\n" + currentTime,
-                        binding.el2scheduleTime.text.toString()
                     )
                 )
             }
@@ -223,8 +230,8 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
             Toast.makeText(requireContext(),"Subject 1 cannot be empty",Toast.LENGTH_LONG).show()
             return false
         }
-        if(binding.el1scheduleTime.text.toString().trim()=="Schedule release time"){
-            Toast.makeText(requireContext(),"Schedule a Release time",Toast.LENGTH_LONG).show()
+        if(!binding.el1CsBtn.isSelected&&!binding.el1ItBtn.isSelected&&!binding.el1CsaiBtn.isSelected&&!binding.el1CsbBtn.isSelected){
+            Toast.makeText(requireContext(),"Select atleast 1 branch",Toast.LENGTH_LONG).show()
             return false
         }
         return true
@@ -235,33 +242,11 @@ class AddAnElective : Fragment(),DatePickerDialog.OnDateSetListener,TimePickerDi
             Toast.makeText(requireContext(),"Subject 1 cannot be empty",Toast.LENGTH_LONG).show()
             return false
         }
-        if(binding.el2scheduleTime.text.toString().trim()=="Schedule release time"){
-            Toast.makeText(requireContext(),"Schedule a Release time",Toast.LENGTH_LONG).show()
+        if(!binding.el2CsBtn.isSelected&&!binding.el2ItBtn.isSelected&&!binding.el2CsaiBtn.isSelected&&!binding.el2CsbBtn.isSelected){
+            Toast.makeText(requireContext(),"Select atleast 1 branch",Toast.LENGTH_LONG).show()
             return false
         }
         return true
-    }
-
-    private fun getDateTimeCalendar(){
-        val cal = Calendar.getInstance()
-        day=cal.get(Calendar.DAY_OF_MONTH)
-        month=cal.get(Calendar.MONTH)
-        year=cal.get(Calendar.YEAR)
-        hour=cal.get(Calendar.HOUR)
-        min=cal.get(Calendar.MINUTE)
-    }
-
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        savedDay=dayOfMonth
-        savedMonth=month
-        savedYear=year
-        getDateTimeCalendar()
-        TimePickerDialog(requireContext(),this,hour,min,true).show()
-    }
-
-    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        savedHour=hourOfDay
-        savedMin=min
     }
 
 

@@ -58,29 +58,10 @@
             android:layout_marginTop="10dp"
             android:textSize="20sp"
             />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="OPEN FOR SELECTION ON : "
-            android:fontFamily="@font/nunito_black"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:textSize="20sp"
-            />
-        <TextView
-            android:id="@+id/scheduledAt1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="XX-XX-XXXX XX:XX"
-            android:fontFamily="@font/nunito_black"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="80dp"
-            android:textSize="20sp"
-            />
         <com.google.android.material.card.MaterialCardView
             android:layout_width="280dp"
             android:layout_height="150dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="70dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
 
@@ -117,7 +98,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="280dp"
             android:layout_height="150dp"
-            android:layout_marginTop="290dp"
+            android:layout_marginTop="250dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
             >
@@ -152,7 +133,7 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="280dp"
             android:layout_height="150dp"
-            android:layout_marginTop="460dp"
+            android:layout_marginTop="430dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
             android:layout_marginBottom="30dp"
@@ -217,29 +198,10 @@
                 android:layout_marginTop="10dp"
                 android:textSize="20dp"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OPEN FOR SELECTION ON : "
-                android:fontFamily="@font/nunito_black"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
-                android:textSize="20sp"
-                />
-            <TextView
-                android:id="@+id/scheduledAt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="XX-XX-XXXX XX:XX"
-                android:fontFamily="@font/nunito_black"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="80dp"
-                android:textSize="20sp"
-                />
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="280dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="70dp"
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="20dp"
                 >
@@ -274,7 +236,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="280dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="290dp"
+                android:layout_marginTop="250dp"
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="20dp"
                 >
@@ -309,7 +271,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="280dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="460dp"
+                android:layout_marginTop="420dp"
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="20dp"
                 android:layout_marginBottom="30dp"

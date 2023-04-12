@@ -116,9 +116,6 @@ class SelectAnElective : Fragment() {
                     val e2s1 = messageJsonObject.getJSONObject("e2s1")
                     val e2s2 = messageJsonObject.getJSONObject("e2s2")
                     val e2s3 = messageJsonObject.getJSONObject("e2s3")
-
-                    val scheduledAt1=messageJsonObject.getString("scheduledAt1")
-                    val scheduledAt2=messageJsonObject.getString("scheduledAt2")
                     val choiceString1=messageJsonObject.getString("choiceString1")
                     val choiceString2=messageJsonObject.getString("choiceString2")
 
@@ -169,15 +166,12 @@ class SelectAnElective : Fragment() {
                         binding.el1sub3Choose.isEnabled=true
                         binding.el1sub3Choose.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.purple_500))
                     }
-                    binding.scheduledAt1.text=scheduledAt1
-
                     binding.el2sub1SubTitle.text=e2s1.getString("subTitle")
                     binding.el2sub1Faculty.text=e2s1.getString("facultyName")
                     binding.el2sub2SubTitle.text=e2s2.getString("subTitle")
                     binding.el2sub2Faculty.text=e2s2.getString("facultyName")
                     binding.el2sub3SubTitle.text=e2s3.getString("subTitle")
                     binding.el2sub3Faculty.text=e2s3.getString("facultyName")
-                    binding.scheduledAt2.text=scheduledAt2
                     if(choiceString2[0]=='0'||binding.el2sub1SubTitle.text.toString()=="NA"){
                         binding.el2sub1Choose.isEnabled=false
                         binding.el2sub1Choose.setBackgroundColor(Color.parseColor("#3e4142"))

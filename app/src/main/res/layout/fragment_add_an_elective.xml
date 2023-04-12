@@ -138,6 +138,7 @@
 
                         />
 
+
                 </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -253,31 +254,53 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/el1scheduleTime"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/el1CsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/el1sub3card"
+            app:layout_constraintRight_toLeftOf="@id/el1ItBtn"
+            android:layout_marginTop="20dp"
+            android:text="CS"
+            android:background="@drawable/branch_btn_background"
+            />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el1ItBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_black"
-                android:text="Schedule release time"
-                android:layout_marginTop="30dp"
-                android:textColor="#2B3A55"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/el1sub3card" />
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el1sub3card"
+                app:layout_constraintLeft_toRightOf="@+id/el1CsBtn"
+                android:layout_marginTop="20dp"
+                android:text="IT"
+                android:background="@drawable/branch_btn_background"
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/el1scheduleTimeBtn"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el1CsaiBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#AAE1EF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/el1CsBtn"
+                app:layout_constraintRight_toLeftOf="@+id/el1CsbBtn"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:contentDescription="schedule"
-                android:src="@drawable/ic_schedule"
-                app:layout_constraintLeft_toRightOf="@+id/el1scheduleTime"
-                app:layout_constraintTop_toBottomOf="@+id/el1sub3card" />
+                android:text="CSAI"
+                android:background="@drawable/branch_btn_background"
 
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el1CsbBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/el1ItBtn"
+                app:layout_constraintLeft_toRightOf="@id/el1CsaiBtn"
+                android:layout_marginTop="10dp"
+                android:text="CSB"
+                android:background="@drawable/branch_btn_background"
+
+                />
             <Button
                 android:id="@+id/el1Post"
                 android:layout_width="wrap_content"
@@ -290,7 +313,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/el1scheduleTime" />
+                app:layout_constraintTop_toBottomOf="@+id/el1CsbBtn" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -493,31 +516,54 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/el2scheduleTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunito_black"
-                android:text="Schedule release time"
-                android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:textColor="#2B3A55"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/el2sub3card" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/el2scheduleTimeBtn"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el2CsBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#AAE1EF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2sub3card"
+                app:layout_constraintRight_toLeftOf="@id/el2ItBtn"
+                android:layout_marginTop="20dp"
+                android:text="CS"
+                android:background="@drawable/branch_btn_background"
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el2ItBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/el2sub3card"
+                app:layout_constraintLeft_toRightOf="@+id/el2CsBtn"
+                android:layout_marginTop="20dp"
+                android:text="IT"
+                android:background="@drawable/branch_btn_background"
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el2CsaiBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/el2CsBtn"
+                app:layout_constraintRight_toLeftOf="@+id/el2CsbBtn"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:contentDescription="schedule"
-                android:src="@drawable/ic_schedule"
-                app:layout_constraintLeft_toRightOf="@+id/el2scheduleTime"
-                app:layout_constraintTop_toBottomOf="@+id/el2sub3card" />
+                android:text="CSAI"
+                android:background="@drawable/branch_btn_background"
 
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/el2CsbBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/el2ItBtn"
+                app:layout_constraintLeft_toRightOf="@id/el2CsaiBtn"
+                android:layout_marginTop="10dp"
+                android:text="CSB"
+                android:background="@drawable/branch_btn_background"
+
+                />
             <Button
                 android:id="@+id/el2Post"
                 android:layout_width="wrap_content"
@@ -530,7 +576,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/el2scheduleTime" />
+                app:layout_constraintTop_toBottomOf="@+id/el2CsbBtn" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
