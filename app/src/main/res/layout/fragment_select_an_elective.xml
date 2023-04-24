@@ -64,7 +64,6 @@
             android:layout_marginTop="70dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
-
             >
             <TextView
                 android:id="@+id/el1sub1SubTitle"
@@ -91,7 +90,6 @@
                 android:text="CHOOSE"
                 android:layout_gravity="center_vertical|end"
                 android:layout_marginEnd="10dp"
-
                 />
         </com.google.android.material.card.MaterialCardView>
 

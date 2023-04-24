@@ -60,15 +60,39 @@ interface MyApi {
     @POST("/choose")
     fun chooseSub(
         @Field("userEmail")userEmail: String,
+        @Field("userName")userName: String,
         @Field("semNum")semNum: String,
         @Field("electiveNum")electiveNum: String,
-        @Field("choiceString")choiceString: String
+        @Field("choiceString")choiceString: String,
+        @Field("branchList")branchList: MutableList<String>
     ):Call<myResponse>
-
 
     @FormUrlEncoded
     @POST("/selectedElectives")
     fun getSelectedElectives(
         @Field("userEmail")userEmail: String,
     ):Call<selectedElectivesData>
+
+
+    @POST("/semData")
+    fun getSemData(
+        @Body filterSemData: filterSemData
+    ):Call<StudentsDataModel>
+
+
+    @FormUrlEncoded
+    @POST("/subjects")
+    fun getSubjectsData(
+        @Field("semNum")semNum: String,
+        @Field("electiveNum")electiveNum: String,
+        @Field("branchList")branchList: MutableList<String>
+    ):Call<SubjectsDataModel>
+
+
+    @FormUrlEncoded
+    @POST("/branches")
+    fun getBranchesData(
+        @Field("semNum")semNum: String,
+        @Field("electiveNum")electiveNum: String
+    ):Call<BranchesDataModel>
 }

@@ -1,27 +1,27 @@
 package com.example.electiveselector.fragments
 
-import android.content.Intent
+import android.app.Dialog
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.example.electiveselector.Professor
 import com.example.electiveselector.R
-import com.example.electiveselector.Student
+import com.example.electiveselector.data.SemAndBranchList
 import com.example.electiveselector.data.chooseSub
 import com.example.electiveselector.data.semData
-import com.example.electiveselector.data.semwiseElectiveData
 import com.example.electiveselector.databinding.FragmentSelectAnElectiveBinding
 import com.example.electiveselector.viewModels.SelectAnElectiveViewModel
-import com.example.electiveselector.viewModels.signupViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.gson.Gson
+import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.util.*
@@ -35,6 +35,10 @@ class SelectAnElective : Fragment() {
     lateinit var vm:SelectAnElectiveViewModel
     lateinit var msg:String
     lateinit var errorMsg:String
+    lateinit var userName:String
+    lateinit var el1branchList:MutableList<String>
+    lateinit var el2branchList:MutableList<String>
+    var sem="5"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,43 +49,34 @@ class SelectAnElective : Fragment() {
         )
         vm = ViewModelProvider.AndroidViewModelFactory(requireActivity().application)
             .create(SelectAnElectiveViewModel::class.java)
-        var sem="5"
+
         mAuth=FirebaseAuth.getInstance()
         email=mAuth.currentUser!!.email.toString()
+        userName=mAuth.currentUser!!.displayName.toString()
+        el1branchList= mutableListOf()
+        el2branchList= mutableListOf()
         val year=email.subSequence(3,7)
         val calendar = Calendar.getInstance()
         val currentMonth = calendar.get(Calendar.MONTH) + 1
         val currentYear = calendar.get(Calendar.YEAR)
         val x= currentYear-year.toString().toInt()
         binding.el1sub1Choose.setOnClickListener {
-            vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"1","100"))
-            vm.getSemWiseElectiveData(semData(sem,email))
-            Toast.makeText(context,"You have selected ${binding.el1sub1SubTitle.text} as your elective", Toast.LENGTH_LONG).show()
+            showDialog(binding.el1sub1SubTitle.text.toString(),binding.el1sub1Faculty.text.toString(),"1","100",el1branchList)
         }
         binding.el1sub2Choose.setOnClickListener {
-            vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"1","010"))
-            vm.getSemWiseElectiveData(semData(sem,email))
-            Toast.makeText(context,"You have selected ${binding.el1sub2SubTitle.text} as your elective", Toast.LENGTH_LONG).show()
+            showDialog(binding.el1sub2SubTitle.text.toString(),binding.el1sub2Faculty.text.toString(),"1","010",el1branchList)
         }
         binding.el1sub3Choose.setOnClickListener {
-            vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"1","001"))
-            vm.getSemWiseElectiveData(semData(sem,email))
-            Toast.makeText(context, "You have selected ${binding.el1sub3SubTitle.text} as your elective", Toast.LENGTH_LONG).show()
+            showDialog(binding.el1sub3SubTitle.text.toString(),binding.el1sub3Faculty.text.toString(),"1","001",el1branchList)
         }
         binding.el2sub1Choose.setOnClickListener {
-            vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"2","100"))
-            vm.getSemWiseElectiveData(semData(sem,email))
-            Toast.makeText(context, "You have selected ${binding.el2sub1SubTitle.text} as your elective", Toast.LENGTH_LONG).show()
+            showDialog(binding.el2sub1SubTitle.text.toString(),binding.el2sub1Faculty.text.toString(),"2","100",el2branchList)
         }
         binding.el2sub2Choose.setOnClickListener {
-            vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"2","010"))
-            vm.getSemWiseElectiveData(semData(sem,email))
-            Toast.makeText(context, "You have selected ${binding.el2sub2SubTitle.text} as your elective", Toast.LENGTH_LONG).show()
+            showDialog(binding.el2sub2SubTitle.text.toString(),binding.el2sub2Faculty.text.toString(),"2","010",el2branchList)
         }
         binding.el2sub3Choose.setOnClickListener {
-            vm.chooseASubject(chooseSub(email,binding.currentSem.text.toString().subSequence(4,5).toString(),"2","001"))
-            vm.getSemWiseElectiveData(semData(sem,email))
-            Toast.makeText(context, "You have selected ${binding.el2sub3SubTitle.text} as your elective", Toast.LENGTH_LONG).show()
+            showDialog(binding.el2sub3SubTitle.text.toString(),binding.el2sub3Faculty.text.toString(),"2","001",el2branchList)
         }
         vm.chooseSubResponse.observe(viewLifecycleOwner){
             if (it.isSuccessful) {
@@ -118,6 +113,8 @@ class SelectAnElective : Fragment() {
                     val e2s3 = messageJsonObject.getJSONObject("e2s3")
                     val choiceString1=messageJsonObject.getString("choiceString1")
                     val choiceString2=messageJsonObject.getString("choiceString2")
+                    el1branchList=jsonArrayToMutableList(messageJsonObject.getJSONArray("el1branchList"))
+                    el2branchList=jsonArrayToMutableList(messageJsonObject.getJSONArray("el2branchList"))
 
 
 
@@ -245,5 +242,38 @@ class SelectAnElective : Fragment() {
         }
         return binding.root
     }
+
+    private fun jsonArrayToMutableList(jsonArray: JSONArray): MutableList<String> {
+        val mutableList = mutableListOf<String>()
+        for (i in 0 until jsonArray.length()) {
+            mutableList.add(jsonArray[i] as String)
+        }
+        return mutableList
+    }
+
+    private fun showDialog(subTitle:String, faculty:String,electiveNum:String,choiceString: String,branchList: MutableList<String>){
+        val message = "You've selected $subTitle taught by $faculty. Are you sure you want to proceed with this? \n \n Note: Elective cannot be changed. Please choose carefully before proceeding."
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialog_layout)
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val dialogText:TextView = dialog.findViewById(R.id.dialogText)
+        val btnYes:TextView = dialog.findViewById(R.id.btnYes)
+        val btnNo:TextView = dialog.findViewById(R.id.btnNo)
+        dialogText.text=message
+        btnYes.setOnClickListener {
+            vm.chooseASubject(chooseSub(email,userName,binding.currentSem.text.toString().subSequence(4,5).toString(),electiveNum,choiceString,branchList))
+            Toast.makeText(context,"You have selected $subTitle as your elective", Toast.LENGTH_LONG).show()
+            vm.getSemWiseElectiveData(semData(sem,email))
+            dialog.dismiss()
+        }
+        btnNo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
 
 }

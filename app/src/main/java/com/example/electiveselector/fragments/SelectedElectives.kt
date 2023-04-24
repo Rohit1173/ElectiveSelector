@@ -78,8 +78,6 @@ class SelectedElectives : Fragment() {
                 }
             }
         }
-
-
         return binding.root
     }
 

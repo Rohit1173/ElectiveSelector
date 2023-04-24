@@ -1,10 +1,10 @@
 package com.example.electiveselector.data
 
-data class chooseSub(
-    val userEmail:String,
+data class StudentsData(
     val userName:String,
+    val userEmail:String,
+    val sub:ElectiveDetails,
     val semNum:String,
     val electiveNum:String,
-    val choiceString:String,
     val branchList:MutableList<String>
 )

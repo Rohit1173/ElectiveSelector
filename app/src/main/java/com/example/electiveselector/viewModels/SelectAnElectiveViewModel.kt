@@ -39,9 +39,11 @@ class SelectAnElectiveViewModel(application: Application):AndroidViewModel(appli
     fun chooseASubject(chooseSub: chooseSub) {
         retrofitInstance.api.chooseSub(
             chooseSub.userEmail,
+            chooseSub.userName,
             chooseSub.semNum,
             chooseSub.electiveNum,
-            chooseSub.choiceString
+            chooseSub.choiceString,
+            chooseSub.branchList
         ).enqueue(object : Callback<myResponse> {
             override fun onResponse(
                 call: Call<myResponse>,

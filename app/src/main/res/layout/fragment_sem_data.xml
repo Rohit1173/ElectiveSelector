@@ -17,7 +17,7 @@
         android:id="@+id/semHeading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Semester 5"
+        android:text="Semester 5\nElective 1"
         android:gravity="center"
         android:textColor="#2B3A55"
         android:textSize="22sp"
@@ -29,12 +29,55 @@
         android:layout_marginStart="30dp"
         />
 
+        <Button
+            android:id="@+id/exportCsv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#CFE1F8"
+            android:fontFamily="@font/open_sans"
+            android:textColor="#2B3A55"
+            android:text="Export to CSV"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/semDataCard"
+            android:layout_marginEnd="24dp"
+            />
+
+
+        <Spinner
+            android:id="@+id/subjects"
+            android:layout_width="130dp"
+            android:layout_height="36dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toBottomOf="@id/exportCsv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="60dp"
+            android:background="#CFE0F8"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            />
+
+
+        <Spinner
+            android:id="@+id/branches"
+            android:layout_width="130dp"
+            android:layout_height="36dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toBottomOf="@id/exportCsv"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="60dp"
+            android:background="#CFE0F8"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            />
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/semDataCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/semHeading"
+        app:layout_constraintTop_toBottomOf="@+id/branches"
         app:layout_constraintBottom_toBottomOf="parent"
         app:cardBackgroundColor="#CFE0F8"
         android:layout_margin="15dp"

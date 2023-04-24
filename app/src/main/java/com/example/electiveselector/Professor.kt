@@ -2,6 +2,8 @@ package com.example.electiveselector
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.StrictMode
+import android.os.StrictMode.VmPolicy
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
@@ -27,6 +29,8 @@ class Professor : AppCompatActivity() {
         binding = ActivityProfessorBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        val builder = VmPolicy.Builder()
+        StrictMode.setVmPolicy(builder.build())
         mAuth=FirebaseAuth.getInstance()
         toggle= ActionBarDrawerToggle(this,binding.drawerLayout,R.string.open,R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
