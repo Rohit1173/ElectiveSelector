@@ -1,6 +1,8 @@
 package com.example.electiveselector.fragments
 
 import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.view.LayoutInflater
@@ -10,6 +12,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.R
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.electiveselector.adapters.SemDataAdapter
@@ -328,12 +331,12 @@ class SemData : Fragment() {
             val fileOut = FileOutputStream(excelFile)
             ourWorkbook.write(fileOut)
             fileOut.close()
+            val uri = FileProvider.getUriForFile(requireContext(), context?.packageName + ".fileprovider", excelFile)
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" // set MIME type to XLSX
+            intent.putExtra(Intent.EXTRA_STREAM, uri) // attach the file to the intent
 
-//            val intent = Intent(Intent.ACTION_SEND)
-//            intent.type = "application/octet-stream" // set MIME type to XLSX
-//            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(excelFile)) // attach the file to the intent
-//
-//            startActivity(Intent.createChooser(intent, "Send XLSX file"))
+            startActivity(Intent.createChooser(intent, "Send XLSX file"))
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
         } catch (e: IOException) {

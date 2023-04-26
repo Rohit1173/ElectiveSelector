@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.cloudinary.android.MediaManager
 import com.example.electiveselector.databinding.ActivityProfessorBinding
 import com.example.electiveselector.fragments.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -31,6 +32,7 @@ class Professor : AppCompatActivity() {
         setContentView(view)
         val builder = VmPolicy.Builder()
         StrictMode.setVmPolicy(builder.build())
+        config()
         mAuth=FirebaseAuth.getInstance()
         toggle= ActionBarDrawerToggle(this,binding.drawerLayout,R.string.open,R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -80,13 +82,21 @@ class Professor : AppCompatActivity() {
         }
     }
 
+    private fun config() { // UPDATE THESE VALUES WITH YOUR CLOUDINARY VALUES YOU CAN FIND THEM IN YOUR CLOUDINARY DASHBOARD
+        val appConfig: HashMap<String, String> = HashMap<String, String> ()
+        appConfig["cloud_name"] = "dy37al6ck"
+        appConfig["api_key"]="859527859368313"
+        appConfig["api_secret"] = "o-MSmsjT4xhXbF2dXyQ20kS4IEI"
+        MediaManager.init(this, appConfig)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)
     }
-    private fun replaceFragment(fragment: Fragment,args: Bundle? = null){
+    private fun replaceFragment(fragment: Fragment, args: Bundle? = null){
         fragment.arguments = args
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.frame,fragment)

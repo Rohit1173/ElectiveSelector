@@ -141,6 +141,34 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Resources"
+                android:fontFamily="@font/open_sans"
+                android:textColor="#2B3A55"
+                android:textSize="14sp"
+                android:layout_marginTop="165dp"
+                android:layout_marginStart="20dp"
+                />
+
+
+                    <EditText
+                        android:id="@+id/el1sub1AddResource"
+                        android:layout_width="206dp"
+                        android:layout_height="40dp"
+                        android:background="#E2EDFB"
+                        android:textColor="#2B3A55"
+                        android:text="Upload"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginTop="190dp"
+                        android:drawableEnd="@drawable/upload"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:layout_gravity="center_horizontal"
+                        android:focusableInTouchMode="false"
+                        />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -196,7 +224,34 @@
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Resources"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
+                    android:layout_marginTop="165dp"
+                    android:layout_marginStart="20dp"
+                    />
 
+
+                <EditText
+                    android:id="@+id/el1sub2AddResource"
+                    android:layout_width="206dp"
+                    android:layout_height="40dp"
+                    android:background="#E2EDFB"
+                    android:textColor="#2B3A55"
+                    android:text="Upload"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginTop="190dp"
+                    android:drawableEnd="@drawable/upload"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_gravity="center_horizontal"
+                    android:focusableInTouchMode="false"
+                    />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -251,7 +306,34 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Resources"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
+                    android:layout_marginTop="165dp"
+                    android:layout_marginStart="20dp"
+                    />
 
+
+                <EditText
+                    android:id="@+id/el1sub3AddResource"
+                    android:layout_width="206dp"
+                    android:layout_height="40dp"
+                    android:background="#E2EDFB"
+                    android:textColor="#2B3A55"
+                    android:text="Upload"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginTop="190dp"
+                    android:drawableEnd="@drawable/upload"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_gravity="center_horizontal"
+                    android:focusableInTouchMode="false"
+                    />
             </com.google.android.material.card.MaterialCardView>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -263,6 +345,8 @@
             app:layout_constraintRight_toLeftOf="@id/el1ItBtn"
             android:layout_marginTop="20dp"
             android:text="CS"
+
+
             android:background="@drawable/branch_btn_background"
             />
             <androidx.appcompat.widget.AppCompatButton
@@ -405,7 +489,34 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Resources"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
+                    android:layout_marginTop="165dp"
+                    android:layout_marginStart="20dp"
+                    />
 
+
+                <EditText
+                    android:id="@+id/el2sub1AddResource"
+                    android:layout_width="206dp"
+                    android:layout_height="40dp"
+                    android:background="#E2EDFB"
+                    android:textColor="#2B3A55"
+                    android:text="Upload"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginTop="190dp"
+                    android:drawableEnd="@drawable/upload"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_gravity="center_horizontal"
+                    android:focusableInTouchMode="false"
+                    />
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -458,7 +569,34 @@
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Resources"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
+                    android:layout_marginTop="165dp"
+                    android:layout_marginStart="20dp"
+                    />
 
+
+                <EditText
+                    android:id="@+id/el2sub2AddResource"
+                    android:layout_width="206dp"
+                    android:layout_height="40dp"
+                    android:background="#E2EDFB"
+                    android:textColor="#2B3A55"
+                    android:text="Upload"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginTop="190dp"
+                    android:drawableEnd="@drawable/upload"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_gravity="center_horizontal"
+                    android:focusableInTouchMode="false"
+                    />
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -512,7 +650,34 @@
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Resources"
+                    android:fontFamily="@font/open_sans"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
+                    android:layout_marginTop="165dp"
+                    android:layout_marginStart="20dp"
+                    />
 
+
+                <EditText
+                    android:id="@+id/el2sub3AddResource"
+                    android:layout_width="206dp"
+                    android:layout_height="40dp"
+                    android:background="#E2EDFB"
+                    android:textColor="#2B3A55"
+                    android:text="Upload"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:layout_marginTop="190dp"
+                    android:drawableEnd="@drawable/upload"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:layout_gravity="center_horizontal"
+                    android:focusableInTouchMode="false"
+                    />
 
             </com.google.android.material.card.MaterialCardView>
 

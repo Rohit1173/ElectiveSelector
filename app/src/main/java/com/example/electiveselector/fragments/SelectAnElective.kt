@@ -1,9 +1,14 @@
 package com.example.electiveselector.fragments
 
 import android.app.Dialog
+import android.app.DownloadManager
+import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +43,12 @@ class SelectAnElective : Fragment() {
     lateinit var userName:String
     lateinit var el1branchList:MutableList<String>
     lateinit var el2branchList:MutableList<String>
+    lateinit var e1s1Pdf:String
+    lateinit var e1s2Pdf:String
+    lateinit var e1s3Pdf:String
+    lateinit var e2s1Pdf:String
+    lateinit var e2s2Pdf:String
+    lateinit var e2s3Pdf:String
     var sem="5"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,6 +71,47 @@ class SelectAnElective : Fragment() {
         val currentMonth = calendar.get(Calendar.MONTH) + 1
         val currentYear = calendar.get(Calendar.YEAR)
         val x= currentYear-year.toString().toInt()
+        val resList = mutableListOf(binding.el1sub1Resource,binding.el1sub2Resource,binding.el1sub3Resource,binding.el2sub1Resource,binding.el2sub2Resource,binding.el2sub3Resource)
+        for( i in resList){
+            i.setOnClickListener {
+                var myUrl=""
+                var myTitle=""
+                when(i){
+                    binding.el1sub1Resource ->{
+                        myUrl=e1s1Pdf
+                        myTitle="Semester_${sem}_Elective_1_${binding.el1sub1SubTitle}"
+                    }
+                    binding.el1sub2Resource ->{
+                        myUrl=e1s2Pdf
+                        myTitle="Semester_${sem}_Elective_1_${binding.el1sub2SubTitle}"
+                    }
+                    binding.el1sub3Resource ->{
+                        myUrl=e1s3Pdf
+                        myTitle="Semester_${sem}_Elective_1_${binding.el1sub3SubTitle}"
+                    }
+                    binding.el2sub1Resource ->{
+                        myUrl=e2s1Pdf
+                        myTitle="Semester_${sem}_Elective_2_${binding.el2sub1SubTitle}"
+                    }
+                    binding.el2sub2Resource ->{
+                        myUrl=e2s2Pdf
+                        myTitle="Semester_${sem}_Elective_2_${binding.el2sub2SubTitle}"
+                    }
+                    binding.el2sub3Resource ->{
+                        myUrl=e2s3Pdf
+                        myTitle="Semester_${sem}_Elective_2_${binding.el2sub3SubTitle}"
+                    }
+                }
+                val request = DownloadManager.Request(Uri.parse(myUrl))
+                request.setTitle(myTitle)
+                request.setDescription("Downloading file...")
+                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "${myTitle}.pdf")
+
+                val downloadManager = requireContext().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+                downloadManager.enqueue(request)
+            }
+        }
         binding.el1sub1Choose.setOnClickListener {
             showDialog(binding.el1sub1SubTitle.text.toString(),binding.el1sub1Faculty.text.toString(),"1","100",el1branchList)
         }
@@ -113,6 +165,7 @@ class SelectAnElective : Fragment() {
                     val e2s3 = messageJsonObject.getJSONObject("e2s3")
                     val choiceString1=messageJsonObject.getString("choiceString1")
                     val choiceString2=messageJsonObject.getString("choiceString2")
+
                     el1branchList=jsonArrayToMutableList(messageJsonObject.getJSONArray("el1branchList"))
                     el2branchList=jsonArrayToMutableList(messageJsonObject.getJSONArray("el2branchList"))
 
@@ -120,10 +173,25 @@ class SelectAnElective : Fragment() {
 
                     binding.el1sub1SubTitle.text=e1s1.getString("subTitle")
                     binding.el1sub1Faculty.text=e1s1.getString("facultyName")
+                    e1s1Pdf=e1s1.getString("pdfUrl")
+                    if(e1s1Pdf=="NA"){
+                        binding.el1sub1Resource.isEnabled=false
+                        binding.el1sub1Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                    }
                     binding.el1sub2SubTitle.text=e1s2.getString("subTitle")
                     binding.el1sub2Faculty.text=e1s2.getString("facultyName")
+                    e1s2Pdf=e1s2.getString("pdfUrl")
+                    if(e1s2Pdf=="NA"){
+                        binding.el1sub2Resource.isEnabled=false
+                        binding.el1sub2Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                    }
                     binding.el1sub3SubTitle.text=e1s3.getString("subTitle")
                     binding.el1sub3Faculty.text=e1s3.getString("facultyName")
+                    e1s3Pdf=e1s3.getString("pdfUrl")
+                    if(e1s3Pdf=="NA"){
+                        binding.el1sub3Resource.isEnabled=false
+                        binding.el1sub3Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                    }
                     if(choiceString1[0]=='0'||binding.el1sub1SubTitle.text.toString()=="NA"){
                         binding.el1sub1Choose.isEnabled=false
                         binding.el1sub1Choose.setBackgroundColor(Color.parseColor("#3e4142"))
@@ -165,10 +233,25 @@ class SelectAnElective : Fragment() {
                     }
                     binding.el2sub1SubTitle.text=e2s1.getString("subTitle")
                     binding.el2sub1Faculty.text=e2s1.getString("facultyName")
+                    e2s1Pdf=e2s1.getString("pdfUrl")
+                    if(e2s1Pdf=="NA"){
+                        binding.el2sub1Resource.isEnabled=false
+                        binding.el2sub1Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                    }
                     binding.el2sub2SubTitle.text=e2s2.getString("subTitle")
                     binding.el2sub2Faculty.text=e2s2.getString("facultyName")
+                    e2s2Pdf=e2s2.getString("pdfUrl")
+                    if(e2s2Pdf=="NA"){
+                        binding.el2sub2Resource.isEnabled=false
+                        binding.el2sub2Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                    }
                     binding.el2sub3SubTitle.text=e2s3.getString("subTitle")
                     binding.el2sub3Faculty.text=e2s3.getString("facultyName")
+                    e2s3Pdf=e2s3.getString("pdfUrl")
+                    if(e2s3Pdf=="NA"){
+                        binding.el2sub3Resource.isEnabled=false
+                        binding.el2sub3Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                    }
                     if(choiceString2[0]=='0'||binding.el2sub1SubTitle.text.toString()=="NA"){
                         binding.el2sub1Choose.isEnabled=false
                         binding.el2sub1Choose.setBackgroundColor(Color.parseColor("#3e4142"))

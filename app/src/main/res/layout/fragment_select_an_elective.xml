@@ -5,12 +5,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SelectAnElective">
+    tools:context=".fragments.SelectAnElective"
+
+    >
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#E2EDFB"
+        >
 
 
     <com.google.android.material.textfield.TextInputLayout
@@ -22,7 +26,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#CFE0F8"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/currentSem"
@@ -41,12 +47,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="#BFEAF5"
-        app:cardElevation="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="#CFE0F8"
         app:cardPreventCornerOverlap="true"
-        app:strokeWidth="2dp"
-        app:strokeColor="#82AAE3"
         android:layout_marginTop="30dp"
         >
         <TextView
@@ -60,108 +63,155 @@
             />
         <com.google.android.material.card.MaterialCardView
             android:layout_width="280dp"
-            android:layout_height="150dp"
+            android:layout_height="180dp"
             android:layout_marginTop="70dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
+            android:backgroundTint="#E2EDFB"
             >
             <TextView
                 android:id="@+id/el1sub1SubTitle"
                 android:text="SUBJECT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#2B3A55"
+                android:textSize="18sp"
                 />
             <TextView
                 android:id="@+id/el1sub1Faculty"
                 android:text="FACULTY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#2B3A55"
+                android:textSize="14sp"
                 />
             <Button
                 android:id="@+id/el1sub1Choose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CHOOSE"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <Button
+                android:id="@+id/el1sub1Resource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resources"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="280dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="250dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="280dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
+            android:backgroundTint="#E2EDFB"
             >
             <TextView
                 android:id="@+id/el1sub2SubTitle"
                 android:text="SUBJECT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#2B3A55"
+                android:textSize="18sp"
                 />
             <TextView
                 android:id="@+id/el1sub2Faculty"
                 android:text="FACULTY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#2B3A55"
+                android:textSize="14sp"
                 />
             <Button
                 android:id="@+id/el1sub2Choose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CHOOSE"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <Button
+                android:id="@+id/el1sub2Resource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resources"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="280dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="430dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="480dp"
             android:layout_gravity="center_horizontal"
             app:cardCornerRadius="20dp"
             android:layout_marginBottom="30dp"
-
+            android:backgroundTint="#E2EDFB"
             >
             <TextView
                 android:id="@+id/el1sub3SubTitle"
                 android:text="SUBJECT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#2B3A55"
+                android:textSize="18sp"
                 />
             <TextView
                 android:id="@+id/el1sub3Faculty"
                 android:text="FACULTY"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/nunito_black"
-                android:layout_marginStart="30dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#2B3A55"
+                android:textSize="14sp"
                 />
             <Button
                 android:id="@+id/el1sub3Choose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="CHOOSE"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginEnd="10dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                />
+
+            <Button
+                android:id="@+id/el1sub3Resource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resources"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
                 />
         </com.google.android.material.card.MaterialCardView>
 
@@ -178,12 +228,9 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:cardCornerRadius="20dp"
-            app:cardBackgroundColor="#BFEAF5"
-            app:cardElevation="10dp"
+            app:cardCornerRadius="30dp"
             app:cardPreventCornerOverlap="true"
-            app:strokeWidth="2dp"
-            app:strokeColor="#82AAE3"
+            app:cardBackgroundColor="#CFE0F8"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
             >
@@ -202,32 +249,48 @@
                 android:layout_marginTop="70dp"
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="20dp"
+                android:backgroundTint="#E2EDFB"
                 >
                 <TextView
                     android:id="@+id/el2sub1SubTitle"
                     android:text="SUBJECT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/nunito_black"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#2B3A55"
+                    android:textSize="18sp"
                     />
                 <TextView
                     android:id="@+id/el2sub1Faculty"
                     android:text="FACULTY"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="90dp"
+                    android:layout_marginTop="60dp"
                     android:fontFamily="@font/nunito_black"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
                     />
                 <Button
                     android:id="@+id/el2sub1Choose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHOOSE"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/el2sub1Resource"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resources"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -237,32 +300,48 @@
                 android:layout_marginTop="250dp"
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="20dp"
+                android:backgroundTint="#E2EDFB"
                 >
                 <TextView
                     android:id="@+id/el2sub2SubTitle"
                     android:text="SUBJECT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/nunito_black"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#2B3A55"
+                    android:textSize="18sp"
                     />
                 <TextView
                     android:id="@+id/el2sub2Faculty"
                     android:text="FACULTY"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="90dp"
+                    android:layout_marginTop="60dp"
                     android:fontFamily="@font/nunito_black"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
                     />
                 <Button
                     android:id="@+id/el2sub2Choose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHOOSE"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/el2sub2Resource"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resources"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
                     />
             </com.google.android.material.card.MaterialCardView>
 
@@ -273,32 +352,48 @@
                 android:layout_gravity="center_horizontal"
                 app:cardCornerRadius="20dp"
                 android:layout_marginBottom="30dp"
+                android:backgroundTint="#E2EDFB"
                 >
                 <TextView
                     android:id="@+id/el2sub3SubTitle"
                     android:text="SUBJECT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="20dp"
                     android:fontFamily="@font/nunito_black"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#2B3A55"
+                    android:textSize="18sp"
                     />
                 <TextView
                     android:id="@+id/el2sub3Faculty"
                     android:text="FACULTY"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="90dp"
+                    android:layout_marginTop="60dp"
                     android:fontFamily="@font/nunito_black"
-                    android:layout_marginStart="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#2B3A55"
+                    android:textSize="14sp"
                     />
                 <Button
                     android:id="@+id/el2sub3Choose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHOOSE"
-                    android:layout_gravity="center_vertical|end"
-                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/el2sub3Resource"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Resources"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
                     />
             </com.google.android.material.card.MaterialCardView>
 

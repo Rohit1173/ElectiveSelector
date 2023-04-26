@@ -21,7 +21,7 @@ init{
     getAnnouncements()
 }
 
-    fun getAnnouncements() {
+    private fun getAnnouncements() {
 
 
         viewModelScope.launch {
