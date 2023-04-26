@@ -30,7 +30,13 @@ class AnnouncementAdapter(private var list: MutableList<ElectiveData>) :
             branches+=" "
         }
         holder.announcementText.text =
-            "Elective ${item.electiveNum} Released for Sem ${item.semNum} : \n Branches : ${branches} \n 1. ${item.sub1.subTitle} , by ${item.sub1.facultyName} \n 2. ${item.sub2.subTitle} , by ${item.sub2.facultyName} \n 3. ${item.sub3.subTitle} , by ${item.sub3.facultyName} "
+            if(item.sub3.subTitle!="NA") {
+                "Elective ${item.electiveNum} Released for Sem ${item.semNum} : \n Branches : ${branches} \n 1. ${item.sub1.subTitle} , by ${item.sub1.facultyName} \n 2. ${item.sub2.subTitle} , by ${item.sub2.facultyName} \n 3. ${item.sub3.subTitle} , by ${item.sub3.facultyName} "
+            }
+        else{
+                "Elective ${item.electiveNum} Released for Sem ${item.semNum} : \n Branches : ${branches} \n 1. ${item.sub1.subTitle} , by ${item.sub1.facultyName} \n 2. ${item.sub2.subTitle} , by ${item.sub2.facultyName}"
+
+            }
     }
 
     override fun getItemCount(): Int {

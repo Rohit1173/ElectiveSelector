@@ -35,7 +35,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:enabled="false"
-            android:inputType="text" />
+            android:inputType="text"
+            android:fontFamily="@font/nunito_black"
+            android:textColor="#2B3A55"
+
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

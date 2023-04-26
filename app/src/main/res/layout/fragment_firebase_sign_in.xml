@@ -24,8 +24,11 @@
     android:id="@+id/content"
     android:layout_width="350dp"
     android:layout_height="wrap_content"
-    android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
     android:textColor="#2B3A55"
+    android:text="The Elective Selector app helps college students choose elective subjects based on their interests and career goals. It offers 2-4 subject options with resources for each subject, making it easy
+to select electives. Its user-friendly interface and cross-platform compatibility make it accessible and convenient. The app can also include a collaborative community feature for students
+to connect and receive feedback. The Elective Selector app offers a valuable solution to simplify the elective selection and gets rid of the need for manual paper-based processes, speeds up
+elective selection process."
     android:fontFamily="@font/open_sans"
     app:layout_constraintLeft_toLeftOf="parent"
     android:layout_marginStart="20dp"

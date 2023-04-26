@@ -3,32 +3,47 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/design_default_color_primary">
+    android:background="#CFE0F8">
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/displayName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="50dp"
-        android:text="EMAIL"
-        android:textColor="@color/black"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:text="Sai Rohit Chappa"
+        android:textColor="#2B3A55"
+        android:fontFamily="@font/open_sans"
+        android:textSize="25sp"
+        />
 
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/displayName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="30dp"
+        android:text="sairohitchappa01@gmail.com"
+        android:textColor="#2B3A55"
+        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="10dp"
 
         />
     <TextView
         android:id="@+id/type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="50dp"
-        android:text="Prof/Student"
-        android:textColor="@color/black"
-
-
+        app:layout_constraintRight_toRightOf="@id/displayName"
+        android:text="Proffesor"
+        android:textColor="#2B3A55"
+        android:fontFamily="@font/open_sans"
+        android:textSize="15sp"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

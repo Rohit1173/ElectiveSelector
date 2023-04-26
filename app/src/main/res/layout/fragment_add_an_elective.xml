@@ -104,7 +104,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="22dp"
@@ -114,16 +114,15 @@
                         android:id="@+id/el1sub1Title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
-
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="93dp"
@@ -133,7 +132,7 @@
                         android:id="@+id/el1sub1Faculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
 
                         />
@@ -155,9 +154,9 @@
 
                     <EditText
                         android:id="@+id/el1sub1AddResource"
-                        android:layout_width="206dp"
+                        android:layout_width="250dp"
                         android:layout_height="40dp"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         android:text="Upload"
                         android:paddingStart="20dp"
@@ -189,7 +188,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="22dp"
@@ -199,7 +198,7 @@
                         android:id="@+id/el1sub2Title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
 
                         />
@@ -208,7 +207,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="93dp"
@@ -218,7 +217,7 @@
                         android:id="@+id/el1sub2Faculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
 
                         />
@@ -238,9 +237,9 @@
 
                 <EditText
                     android:id="@+id/el1sub2AddResource"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:background="#E2EDFB"
+                    android:background="@drawable/corners"
                     android:textColor="#2B3A55"
                     android:text="Upload"
                     android:paddingStart="20dp"
@@ -272,7 +271,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="22dp"
@@ -282,7 +281,7 @@
                         android:id="@+id/el1sub3Title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -290,7 +289,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="93dp"
@@ -300,7 +299,7 @@
                         android:id="@+id/el1sub3Faculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -320,9 +319,9 @@
 
                 <EditText
                     android:id="@+id/el1sub3AddResource"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:background="#E2EDFB"
+                    android:background="@drawable/corners"
                     android:textColor="#2B3A55"
                     android:text="Upload"
                     android:paddingStart="20dp"
@@ -345,6 +344,7 @@
             app:layout_constraintRight_toLeftOf="@id/el1ItBtn"
             android:layout_marginTop="20dp"
             android:text="CS"
+
 
 
             android:background="@drawable/branch_btn_background"
@@ -455,7 +455,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="22dp"
@@ -465,7 +465,7 @@
                         android:id="@+id/el2sub1Title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -473,7 +473,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="93dp"
@@ -483,7 +483,7 @@
                         android:id="@+id/el2sub1Faculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -503,9 +503,9 @@
 
                 <EditText
                     android:id="@+id/el2sub1AddResource"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:background="#E2EDFB"
+                    android:background="@drawable/corners"
                     android:textColor="#2B3A55"
                     android:text="Upload"
                     android:paddingStart="20dp"
@@ -536,7 +536,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="22dp"
@@ -546,7 +546,7 @@
                         android:id="@+id/el2sub2Title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -554,7 +554,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="93dp"
@@ -564,7 +564,7 @@
                         android:id="@+id/el2sub2Faculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -583,9 +583,9 @@
 
                 <EditText
                     android:id="@+id/el2sub2AddResource"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:background="#E2EDFB"
+                    android:background="@drawable/corners"
                     android:textColor="#2B3A55"
                     android:text="Upload"
                     android:paddingStart="20dp"
@@ -617,7 +617,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="22dp"
@@ -627,7 +627,7 @@
                         android:id="@+id/el2sub3Title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -635,7 +635,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="93dp"
@@ -645,7 +645,7 @@
                         android:id="@+id/el2sub3Faculty"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#E2EDFB"
+                        android:background="@drawable/corners"
                         android:textColor="#2B3A55"
                         />
 
@@ -664,9 +664,9 @@
 
                 <EditText
                     android:id="@+id/el2sub3AddResource"
-                    android:layout_width="206dp"
+                    android:layout_width="250dp"
                     android:layout_height="40dp"
-                    android:background="#E2EDFB"
+                    android:background="@drawable/corners"
                     android:textColor="#2B3A55"
                     android:text="Upload"
                     android:paddingStart="20dp"

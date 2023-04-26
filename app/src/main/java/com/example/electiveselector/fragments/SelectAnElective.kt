@@ -176,25 +176,29 @@ class SelectAnElective : Fragment() {
                     e1s1Pdf=e1s1.getString("pdfUrl")
                     if(e1s1Pdf=="NA"){
                         binding.el1sub1Resource.isEnabled=false
-                        binding.el1sub1Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el1sub1Resource.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     binding.el1sub2SubTitle.text=e1s2.getString("subTitle")
                     binding.el1sub2Faculty.text=e1s2.getString("facultyName")
                     e1s2Pdf=e1s2.getString("pdfUrl")
                     if(e1s2Pdf=="NA"){
                         binding.el1sub2Resource.isEnabled=false
-                        binding.el1sub2Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el1sub2Resource.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     binding.el1sub3SubTitle.text=e1s3.getString("subTitle")
                     binding.el1sub3Faculty.text=e1s3.getString("facultyName")
                     e1s3Pdf=e1s3.getString("pdfUrl")
                     if(e1s3Pdf=="NA"){
                         binding.el1sub3Resource.isEnabled=false
-                        binding.el1sub3Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el1sub3Resource.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     if(choiceString1[0]=='0'||binding.el1sub1SubTitle.text.toString()=="NA"){
                         binding.el1sub1Choose.isEnabled=false
-                        binding.el1sub1Choose.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el1sub1Choose.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     else if(choiceString1[0]=='1'){
                         binding.el1sub1Choose.isEnabled=false
@@ -207,7 +211,8 @@ class SelectAnElective : Fragment() {
                     }
                     if(choiceString1[1]=='0'||binding.el1sub2SubTitle.text.toString()=="NA"){
                         binding.el1sub2Choose.isEnabled=false
-                        binding.el1sub2Choose.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el1sub2Choose.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     else if(choiceString1[1]=='1'){
                         binding.el1sub2Choose.isEnabled=false
@@ -220,7 +225,8 @@ class SelectAnElective : Fragment() {
                     }
                     if(choiceString1[2]=='0'||binding.el1sub3SubTitle.text.toString()=="NA"){
                         binding.el1sub3Choose.isEnabled=false
-                        binding.el1sub3Choose.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el1sub3Choose.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     else if(choiceString1[2]=='1'){
                         binding.el1sub3Choose.isEnabled=false
@@ -236,25 +242,29 @@ class SelectAnElective : Fragment() {
                     e2s1Pdf=e2s1.getString("pdfUrl")
                     if(e2s1Pdf=="NA"){
                         binding.el2sub1Resource.isEnabled=false
-                        binding.el2sub1Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el2sub1Resource.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     binding.el2sub2SubTitle.text=e2s2.getString("subTitle")
                     binding.el2sub2Faculty.text=e2s2.getString("facultyName")
                     e2s2Pdf=e2s2.getString("pdfUrl")
                     if(e2s2Pdf=="NA"){
                         binding.el2sub2Resource.isEnabled=false
-                        binding.el2sub2Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el2sub2Resource.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     binding.el2sub3SubTitle.text=e2s3.getString("subTitle")
                     binding.el2sub3Faculty.text=e2s3.getString("facultyName")
                     e2s3Pdf=e2s3.getString("pdfUrl")
                     if(e2s3Pdf=="NA"){
                         binding.el2sub3Resource.isEnabled=false
-                        binding.el2sub3Resource.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el2sub3Resource.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     if(choiceString2[0]=='0'||binding.el2sub1SubTitle.text.toString()=="NA"){
                         binding.el2sub1Choose.isEnabled=false
-                        binding.el2sub1Choose.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el2sub1Choose.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     else if(choiceString2[0]=='1'){
                         binding.el2sub1Choose.text="SELECTED"
@@ -267,7 +277,8 @@ class SelectAnElective : Fragment() {
                     }
                     if(choiceString2[1]=='0'||binding.el2sub2SubTitle.text.toString()=="NA"){
                         binding.el2sub2Choose.isEnabled=false
-                        binding.el2sub2Choose.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el2sub2Choose.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     else if(choiceString2[1]=='1'){
                         binding.el2sub2Choose.isEnabled=false
@@ -280,7 +291,8 @@ class SelectAnElective : Fragment() {
                     }
                     if(choiceString2[2]=='0'||binding.el2sub3SubTitle.text.toString()=="NA"){
                         binding.el2sub3Choose.isEnabled=false
-                        binding.el2sub3Choose.setBackgroundColor(Color.parseColor("#3e4142"))
+                        binding.el2sub3Choose.setTextColor(Color.parseColor("#9b9c9e"))
+                        binding.el2sub3Choose.setBackgroundColor(Color.parseColor("#9b9c9e"))
                     }
                     else if(choiceString2[2]=='1'){
                         binding.el2sub3Choose.isEnabled=false

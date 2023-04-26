@@ -32,7 +32,6 @@ class Professor : AppCompatActivity() {
         setContentView(view)
         val builder = VmPolicy.Builder()
         StrictMode.setVmPolicy(builder.build())
-        config()
         mAuth=FirebaseAuth.getInstance()
         toggle= ActionBarDrawerToggle(this,binding.drawerLayout,R.string.open,R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -42,7 +41,9 @@ class Professor : AppCompatActivity() {
         binding.sideNav.setCheckedItem(R.id.home)
         binding.sideNav.itemIconTintList=null
         val header: View = binding.sideNav.getHeaderView(0)
+        val pName:TextView=header.findViewById(R.id.displayName)
         val pEmail:TextView=header.findViewById(R.id.email)
+        pName.text=mAuth.currentUser!!.displayName
         pEmail.text=mAuth.currentUser!!.email
         val type:TextView=header.findViewById(R.id.type)
         type.text="PROFESSOR"
@@ -82,13 +83,7 @@ class Professor : AppCompatActivity() {
         }
     }
 
-    private fun config() { // UPDATE THESE VALUES WITH YOUR CLOUDINARY VALUES YOU CAN FIND THEM IN YOUR CLOUDINARY DASHBOARD
-        val appConfig: HashMap<String, String> = HashMap<String, String> ()
-        appConfig["cloud_name"] = "dy37al6ck"
-        appConfig["api_key"]="859527859368313"
-        appConfig["api_secret"] = "o-MSmsjT4xhXbF2dXyQ20kS4IEI"
-        MediaManager.init(this, appConfig)
-    }
+
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)) {

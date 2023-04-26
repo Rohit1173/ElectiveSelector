@@ -12,14 +12,15 @@
         android:id="@+id/greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/open_sans"
         android:text="Welcome, Rohit"
         android:textColor="#2B3A55"
         android:textSize="22sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
     <Button
         android:id="@+id/semBtn"
@@ -55,7 +56,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/sub1card"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="85dp"
         app:layout_constraintTop_toBottomOf="@+id/selectedElectives"
        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +64,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="#CFE0F8"
         app:cardCornerRadius="10dp"
+
         >
         <TextView
             android:id="@+id/el1Title"
@@ -73,8 +75,8 @@
             android:textStyle="bold"
             android:textColor="#2B3A55"
             android:textSize="18sp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginStart="24dp"
             />
 
         <TextView
@@ -86,8 +88,9 @@
             android:textStyle="bold"
             android:textColor="#2B3A55"
             android:textSize="12sp"
-            android:layout_marginTop="33dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="24dp"
+
             />
 
     </com.google.android.material.card.MaterialCardView>
@@ -96,7 +99,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/sub2card"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         app:layout_constraintTop_toBottomOf="@+id/sub1card"
         android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,8 +117,8 @@
             android:textStyle="bold"
             android:textColor="#2B3A55"
             android:textSize="18sp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginStart="24dp"
             />
 
         <TextView
@@ -127,8 +130,8 @@
             android:textStyle="bold"
             android:textColor="#2B3A55"
             android:textSize="12sp"
-            android:layout_marginTop="33dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="24dp"
             />
 
     </com.google.android.material.card.MaterialCardView>

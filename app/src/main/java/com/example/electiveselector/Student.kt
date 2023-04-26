@@ -35,8 +35,10 @@ class Student : AppCompatActivity() {
         binding.studentSideNav.setCheckedItem(R.id.home)
         binding.studentSideNav.itemIconTintList=null
         val header: View = binding.studentSideNav.getHeaderView(0)
+        val sName:TextView=header.findViewById(R.id.displayName)
         val sEmail:TextView=header.findViewById(R.id.email)
         val type: TextView =header.findViewById(R.id.type)
+        sName.text=mAuth.currentUser!!.displayName
         sEmail.text=mAuth.currentUser!!.email
         type.text="STUDENT"
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

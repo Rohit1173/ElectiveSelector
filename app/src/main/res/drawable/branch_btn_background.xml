@@ -4,5 +4,5 @@
         android:drawable="@drawable/branch_sel"/>
 
 
-    <item android:state_selected="false" android:drawable="@drawable/branch_def"/>
+    <item android:state_selected="false" android:drawable="@drawable/corners"/>
 </selector>
